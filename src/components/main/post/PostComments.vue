@@ -6,7 +6,7 @@
             </div>
 
             <div v-else>
-                <span v-if="totalComments === 0" :class="'no-comments'">No hay comentarios</span>
+                <span v-if="totalComments === 0" :class="'no-comments'">No comments available</span>
                 <el-button
                         v-else
                         style="padding: 0"
@@ -50,7 +50,7 @@ export default {
             return this.comments.length
         },
         buttonText() {
-            return this.show ? 'Ocultar' : `Ver comentarios (${this.totalComments})`
+            return this.show ? 'Hide' : `Show comments (${this.totalComments})`
         }
     }
 }

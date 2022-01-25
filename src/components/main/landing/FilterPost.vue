@@ -5,7 +5,7 @@
                 :class="'search-style'"
                 :size="'small'"
                 :clearable="true"
-                :placeholder="'Find post by title...'"
+                :placeholder="'Find posts by title...'"
                 @input="$store.commit('updateSearch', $event)">
         </el-input>
     </div>
