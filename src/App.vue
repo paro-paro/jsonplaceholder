@@ -129,6 +129,11 @@ export default {
         color: #212529 !important;
     }
 
+    .el-textarea__inner::-webkit-input-placeholder {
+        opacity: 0.5   !important;
+        color: #212529 !important;
+    }
+
     .el-card__header {
         padding: .5rem .5rem !important;
     }

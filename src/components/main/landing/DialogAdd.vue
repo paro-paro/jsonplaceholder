@@ -34,21 +34,24 @@
                     
                         <el-input
                                 v-model="form.title"
+                                ref="Input"
                                 :size="'medium'"
                                 :type="'text'"
                                 :maxlength="60"
-                                :clearable="true">
+                                :clearable="true"
+                                :placeholder="'Title'">
                         </el-input>
                 </el-form-item>
 
                 <el-form-item
                             :prop="'body'"
-                            :label="'Body'">
+                            :label="'Content'">
                     
                         <el-input
                                 v-model="form.body"
                                 :type="'textarea'"
-                                :maxlength="800">
+                                :maxlength="800"
+                                :placeholder="'Content'">
                         </el-input>
                 </el-form-item>
 
@@ -63,7 +66,6 @@
                         </el-button>
                     </div>
                 </el-form-item>
-
             </el-form>
     </el-dialog>
 </template>
@@ -111,6 +113,9 @@ export default {
     },
     mounted () {
         this.handleOnMounted()
+        setTimeout(() => {
+            this.$refs.Input.focus()
+        }, 200)
     },
     computed: {
         ...mapState({

@@ -1,5 +1,10 @@
 <template>
-    <post-body :post="post"  :comments="comments"></post-body>
+    <post-body 
+                :post="post"
+                :comments="comments"
+                @add="addComment"
+                @delete="deleteComment">
+    </post-body>
 </template>
 
 <script>
@@ -25,7 +30,8 @@ export default {
         return {
             info: () => {
                 return {
-                    loading: this.loading
+                    loading: this.loading,
+                    post: this.post
                 }
             }
         }
@@ -62,6 +68,13 @@ export default {
                     console.log(error)
                     this.loading = false
                 })
+        },
+        addComment(obj) {
+            this.comments.push(obj)
+        },
+        deleteComment(id) {
+            const idx = this.comments.findIndex(item => item.id === id)
+            this.comments.splice(idx, 1)
         }
     }
 }

@@ -24,7 +24,9 @@
 
             <div :class="'wrapper'">
                 <post-comments
-                        :comments="comments">
+                            :comments="comments"
+                            @add="$emit('add', $event)"
+                            @delete="$emit('delete', $event)">
                 </post-comments>
             </div>
         </div>
