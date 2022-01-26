@@ -17,8 +17,8 @@ export default {
     },
     data () {
         return {
-            comments: [],
-            loading: false
+            loading: false,
+            comments: []
         }
     },
     provide () {
@@ -38,6 +38,7 @@ export default {
         })
     },
     created () {
+        this.loading = true
         this.getPostComments()
     },
     computed: {
@@ -49,20 +50,18 @@ export default {
         }
     },
     methods: {
-        getPostComments() {
-            this.loading = true
-            fetch(`https://jsonplaceholder.typicode.com/posts/${this.id}/comments`)
-                .then(response => response.json())
-                    .then(arr => {
-                        setTimeout(() => {
-                            this.comments = arr
-                            this.loading = false
-                        }, 500)
-                    })
-                .catch(error => {
-                    console.log(error)
+        async getPostComments() {
+            try {
+                let response = await fetch(`https://jsonplaceholder.typicode.com/posts/${this.id}/comments`)
+                this.comments = await response.json()
+                setTimeout(() => {
                     this.loading = false
-                })
+                }, 500)
+
+            } catch(error) {
+                console.log(error)
+                this.loading = false
+            }
         },
         add(obj) {
             this.comments.push(obj)

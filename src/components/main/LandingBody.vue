@@ -87,7 +87,7 @@ export default {
                 })
         },
         getPosts() {
-            fetch('https://jsonplaceholder.typicode.com/posts') // 
+            fetch('https://jsonplaceholder.typicode.com/posts')
                 .then(response => response.json())
                     .then(json => {
                         setTimeout(() => {
