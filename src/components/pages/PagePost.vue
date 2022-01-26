@@ -1,10 +1,5 @@
 <template>
-    <post-body 
-                :post="post"
-                :comments="comments"
-                @add="addComment"
-                @delete="deleteComment">
-    </post-body>
+    <post-body :post="post" :comments="comments" @add="add" @delete="delete_"></post-body>
 </template>
 
 <script>
@@ -69,10 +64,10 @@ export default {
                     this.loading = false
                 })
         },
-        addComment(obj) {
+        add(obj) {
             this.comments.push(obj)
         },
-        deleteComment(id) {
+        delete_(id) {
             const idx = this.comments.findIndex(item => item.id === id)
             this.comments.splice(idx, 1)
         }

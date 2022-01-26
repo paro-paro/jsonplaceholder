@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div :class="'wrapper-button'">
+        <div :class="'wrapper'">
             <div v-if="loading">
                 <i :class="'el-icon-loading'"></i>
             </div>
@@ -38,7 +38,7 @@
             </el-card>
         </div>
         
-        <div v-if="show" :class="'wrapper-button'">
+        <div v-if="show" :class="'wrapper'">
             <el-button
                     :class="'text-button'"
                     :type="'text'"
@@ -46,7 +46,7 @@
             </el-button>
         </div>
 
-        <div v-if="showForm" :class="'wrapper-button'">
+        <div v-if="showForm" :class="'wrapper'">
             <form-comment
                         :ids="ids"
                         @add="$emit('add', $event)"
@@ -111,9 +111,15 @@ export default {
 </script>
 
 <style scoped>
-    .wrapper-button {
+    .wrapper {
         text-align: center;
         margin: 2rem;
+    }
+
+    .wrapper-comments {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
 
     .text-button {
@@ -129,10 +135,16 @@ export default {
         font-style: italic;
     }
 
-    .wrapper-comments {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
+    .el-card:nth-child(even) {
+        text-align: right;
+    }
+
+    .el-icon-delete {
+        cursor: pointer;
+    }
+
+    .el-icon-delete:hover {
+        color: red;
     }
 
     .p-email {
@@ -167,17 +179,5 @@ export default {
         .p-body {
             font-size: 14px;
         }
-    }
-
-    .el-card:nth-child(even) {
-        text-align: right;
-    }
-
-    .el-icon-delete {
-        cursor: pointer;
-    }
-
-    .el-icon-delete:hover {
-        color: red;
     }
 </style>

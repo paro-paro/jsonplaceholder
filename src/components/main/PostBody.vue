@@ -17,9 +17,7 @@
             </div>
 
             <div :class="'wrapper article'">
-                <post-info 
-                        :post="post">
-                </post-info>
+                <post-info :post="post"></post-info>
             </div>
 
             <div :class="'wrapper'">
