@@ -43,7 +43,7 @@ export default {
     },
     watch: {
         trigger() {
-            this.$store.commit('updateSearch', '')
+            if (this.search.length > 0) this.$store.commit('updateSearch', '')
         }
     },
     computed: {

@@ -3,8 +3,7 @@
         <h1>Recent posts by</h1>
         <select-user
                     :value="user"
-                    :options="users"
-                    @change="$emit('update-model', $event)">
+                    :options="users">
         </select-user>
         
         <div :class="'button-info'">
