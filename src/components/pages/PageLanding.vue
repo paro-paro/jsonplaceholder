@@ -1,6 +1,6 @@
 <template>
     <div>
-        <landing-body :isForceError="false" @add="add" @update="update"></landing-body>
+        <landing-body :is-force-error="false" @add="add" @update="update"></landing-body>
         <dialog-add 
                     v-if="show"
                     :mode="mode"

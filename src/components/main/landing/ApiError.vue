@@ -8,7 +8,7 @@ export default {
     props: {
         message: {
             type: String,
-            default: 'Lo sentimos, se ha producido un error inesperado...'
+            default: 'Sorry, an unexpected error has occurred...'
         }
     }
 }

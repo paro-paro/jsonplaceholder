@@ -4,7 +4,7 @@
             <section-posts-left
                             :user="user"
                             :users="usersSort"
-                            :totalPostsByUser="totalPostsByUser"
+                            :total-posts-by-user="totalPostsByUser"
                             @add="$emit('add', user.id)">
             </section-posts-left>
         </div>
